@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Dinamico</title>
+     <link rel="stylesheet" href="clase9.css">
+
+</head>
+<body>
+    
+    <h2>Lista de Tareas</h2>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+    <button id="agregarBtn">Agregar</button>
+    <ul id="listaTareas"></ul>
+
+    <h2>Validación de Edad</h2>
+    <form id="edadForm">
+        <input type="number" id="edadInput" placeholder="Ingresa tu edad" required>
+        <button type="submit">Verificar Edad</button>
+    </form>
+    <p id="mensajeEdad" class="mensaje"></p>
+
+    <script>
+       
+        const agregarBtn = document.getElementById('agregarBtn');
+        const tareaInput = document.getElementById('tareaInput');
+        const listaTareas = document.getElementById('listaTareas');
+
+        function agregarTarea() {
+            const tarea = tareaInput.value.trim();
+            if (tarea !== "") {
+                const li = document.createElement('li');
+                li.textContent = tarea;
+
+              
+                li.addEventListener('click', () => {
+                    li.classList.toggle('completada');
+                });
+
+                
+                const btnEliminar = document.createElement('span');
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.className = 'btnEliminar';
+                btnEliminar.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    li.remove();
+                });
+
+                li.appendChild(btnEliminar);
+                listaTareas.appendChild(li);
+                tareaInput.value = "";
+            } else {
+                alert("Por favor, escribe una tarea antes de agregar.");
+            }
+        }
+
+        agregarBtn.addEventListener('click', agregarTarea);
+        tareaInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') agregarTarea(); 
+        });
+
+        
+        const edadForm = document.getElementById('edadForm');
+        const edadInput = document.getElementById('edadInput');
+        const mensajeEdad = document.getElementById('mensajeEdad');
+
+        edadForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const edad = parseInt(edadInput.value);
+            if (isNaN(edad)) {
+                mensajeEdad.textContent = "Por favor, ingresa un número válido.";
+                mensajeEdad.style.color = "red";
+            } else if (edad >= 18) {
+                mensajeEdad.textContent = "Eres mayor de edad.";
+                mensajeEdad.style.color = "green";
+            } else {
+                mensajeEdad.textContent = "No eres mayor de edad.";
+                mensajeEdad.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

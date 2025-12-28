@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Dinamico</title>
+      <link rel="stylesheet" href="clase9.css">
+</head>
+<body>
+    <h1 id="saludo"></h1>
+
+    <script>
+        const nombre = prompt("¿Cuál es tu nombre?");
+    
+        const h1Saludo = document.getElementById("saludo");
+        
+        h1Saludo.textContent = "Hola, " + nombre + "!";
+    </script>
+</body>
+</html>

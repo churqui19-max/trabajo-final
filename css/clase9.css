@@ -1,0 +1,83 @@
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .contenedor {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        #imagen {
+            width: 300px;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #imagen:hover {
+            transform: scale(1.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .botones {
+            margin-top: 20px;
+        }
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 5px;
+            margin: 5px 0;
+        }
+        ul {
+            list-style-type: disc;
+            margin-top: 10px;
+        }
+        li {
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        li.completada {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .mensaje {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .btnEliminar {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }

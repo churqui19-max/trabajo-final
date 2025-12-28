@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boton de Ocultar / Mostrar</title>
+     <link rel="stylesheet" href="clase9.css">
+</head>
+<body>
+    <h1><p id="texto">Este es un párrafo que se puede ocultar o mostrar. </p></h1>
+    <button id="boton">Ocultar</button>
+
+    <script>
+        const texto = document.getElementById("texto");
+        const boton = document.getElementById("boton");
+ 
+        boton.addEventListener("click", function () {
+            if (texto.style.display === "none") {
+                texto.style.display = "block";
+                boton.textContent = "Ocultar";
+            } else {
+                texto.style.display = "none";
+                boton.textContent = "Mostrar";
+            }
+        });
+    </script>
+</body>
+</html>
